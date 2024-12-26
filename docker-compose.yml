@@ -1,0 +1,30 @@
+services:
+ 
+  db:
+    image: postgres
+    restart: unless-stopped
+    # set shared memory limit when using docker-compose
+    shm_size: 128mb
+    ports: 
+      - 5432:5432
+    volumes:
+      - api_db_dev:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: thingbook
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    healthcheck:
+      test: pg_isready -U ${POSTGRES_USER} -d ${DATABASE_NAME}
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+
+
+volumes:
+  api_db_dev:

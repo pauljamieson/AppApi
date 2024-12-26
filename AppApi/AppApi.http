@@ -1,0 +1,5 @@
+@AppApi_HostAddress = http://localhost:5248
+
+POST {{AppApi_HostAddress}}/SignUp/
+Accept: multipart/form-data
+###
