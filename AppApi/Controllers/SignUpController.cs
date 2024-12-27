@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using AppApi.Data.Models;
 using AppApi.Data;
-using Microsoft.EntityFrameworkCore;
-using System.Xml.Linq;
+
 
 namespace AppApi.Controllers
 {
