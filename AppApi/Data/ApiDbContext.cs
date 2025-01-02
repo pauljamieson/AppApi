@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using AppApi.Data.Models;
 
-
 namespace AppApi.Data
-
 {
     public class ApiDbContext : DbContext
     {
